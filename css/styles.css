@@ -28,8 +28,56 @@ body {
   letter-spacing: 0.03em;
 }
 
+/* CONTAINERS POSITIONS */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+.site-nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 281px;
+  height: auto;
+  padding-inline-start: 0px;
+}
+.header-mail-tel {
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-inline-start: 0px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-nav {
+  display: flex;
+  flex-basis: 281px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.link-mail-tel {
+  margin-left: 50px;
+}
+
+.site-nav {
+  margin-left: 93px;
+}
 /* RESET */
-h1, h2,h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 img {
@@ -83,7 +131,7 @@ img {
   cursor: pointer;
 }
 .button.secondary {
-  background: var(--secondary-btn-color);
+  margin-right: 8px;
   border-radius: 4px;
   width: 125px;
   height: 38px;
@@ -91,8 +139,10 @@ img {
   font-size: 16px;
   line-height: 1.625;
   text-align: center;
+  background: var(--secondary-btn-color);
   color: var(--primary-text-color);
 }
+
 .button.secondary:hover {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -102,12 +152,12 @@ img {
   width: 125px;
   height: 38px;
 }
-.filter {
-  display: inline;
-}
+
 /* НАВІШАЦІЯ ПО САЙТУ В ШАПЦІ */
 
 .site-nav .link {
+  display: block;
+  padding: 32px 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -121,18 +171,31 @@ img {
 .site-nav .link:focus {
   color: var(--accent-color);
 }
-/* ПОСИЛАННЯ */
 
-.mail-tel .link-mail-tel {
+/* ПОСИЛАННЯ */
+.mail-tel {
+  line-height: 1.7;
+  display: flex;
+  padding-inline-start: 0px;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.link-mail-tel,
+.header-mail-tel {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
 }
+
 .link-mail-address {
   font-style: normal;
   line-height: 1.7;
   color: var(--primary-white-color);
+  margin-bottom: 9px;
+}
+.header-mail-tel a:hover {
+  color: var(--accent-color);
 }
 .mail-tel a:hover {
   color: var(--accent-color);
@@ -150,8 +213,19 @@ a {
 }
 
 /* СЕКЦІЯ ГЕРОЙ */
-
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+}
 .hero-title {
+  width: 696px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 200px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -160,7 +234,7 @@ a {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
-.hero.button {
+.hero-button {
   width: 216px;
   height: 50px;
   background-color: var(--secondary-btn-color);
@@ -173,7 +247,7 @@ a {
   text-align: center;
   letter-spacing: 0.06em;
 }
-.hero.button:hover {
+.hero-button:hover {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -184,12 +258,32 @@ a {
 /* СПИСКИ */
 ul {
   list-style: none;
+  padding: 0;
 }
 
 /* АБЗАЦ */
+.features {
+  width: 1170px;
+  height: 98px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 94px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+}
+.features-item {
+  width: 270px;
+  height: auto;
+  text-align: start;
+  justify-content: flex-start;
+}
 .features-title {
   font-size: 14px;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .features-text {
   line-height: 1.5;
@@ -199,14 +293,54 @@ p {
   color: var(--title-text-color);
 }
 
-/* СЕКЦІЯ ДЕТАЛІ */
+/* СЕКЦІЯ FILTER */
 
+.filter {
+  display: flex;
+  justify-content: center;
+  margin: 94px auto 50px;
+}
+.filter:last-child {
+  margin-right: 0;
+}
+.portfolio {
+  width: 1170px;
+  height: 1360px;
+  display: block;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 94px;
+}
+/* СЕКЦІЯ РОБОТИ */
+.works {
+  width: 1170px;
+  height: 1272px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+.works-item {
+  box-sizing: border-box;
+  width: 370px;
+  height: 404px;
+  left: 215px;
+  top: 262px;
+
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
 .works-type {
   font-size: 16px;
+  margin-top: 4px;
+  margin-left: 24px;
 }
-
-/* СЕКЦІЯ РОБОТИ */
 .works-name {
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-bottom: 0px;
+  margin-right: auto;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
@@ -214,28 +348,74 @@ p {
 }
 .works-name:hover {
 }
+.work {
+  width: 1170px;
+  height: 386px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 94px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
 .work-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.work-pictures {
+  width: 1170px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+/* КОМАНДА */
+.team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: var(--secondary-btn-color);
+}
+.team-card-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-card {
+  background: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  width: 270px;
   text-align: center;
 }
 .team-title {
   text-align: center;
 }
 .team-member {
+  margin-top: 30px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   color: #212121;
 }
 .team-member-position {
+  margin-top: 10px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 1.18;
 }
 
 /* ФУТЕР */
-footer {
+.footer {
+  padding: 60px 0;
   background: var(--background-footer-color);
 }
 
